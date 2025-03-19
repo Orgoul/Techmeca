@@ -1,0 +1,55 @@
+/* Masquer la notification par défaut */
+.hidden {
+    display: none;
+}
+
+/* Icône de notification */
+.notification-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Popup de notification */
+#notification-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenu de la popup */
+.notification-header {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.notification-content {
+    background: white;
+    padding: 20px;
+    width: 80%;
+    text-align: center;
+}
+
+/* Bouton de fermeture */
+.close-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    border: 2px solid black;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+}
