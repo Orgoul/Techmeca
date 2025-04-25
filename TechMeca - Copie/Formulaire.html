@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <title>Ajouter une machine</title>
+    <link rel="stylesheet" href="style_formulaire.css">
+</head>
+<body>
+    <a href="machine.html" class="btn retour-btn">Retour</a>
+    <div class="container">
+        <h2>Ajouter une machine</h2>
+        <form>
+            <div class="input-group">
+                <p>Nom de la machine :</p>
+                <input type="text" id="nom" placeholder="Écrire ici...">
+            </div>
+            <div class="input-group">
+                <p>ID de la machine :</p>
+                <input type="text" id="id_machine" placeholder="Écrire ici...">
+            </div>
+            <div class="input-group">
+                <p>ID de la chaîne :</p>
+                <input type="text" id="id_chaine" placeholder="Écrire ici...">
+            </div>
+            <div class="radio-group">
+                <p>État :</p>
+                <input type="radio" id="fonctionnement" name="etat">
+                <label for="fonctionnement">En fonctionnement</label>
+                
+                <input type="radio" id="panne" name="etat">
+                <label for="panne">En panne</label>
+                
+                <input type="radio" id="maintenance" name="etat">
+                <label for="maintenance">En maintenance</label>
+            </div>
+            <button type="submit" class="btn">Ajouter</button>
+        </form>
+    </div>
+    
+</body>
+</html>

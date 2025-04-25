@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock de pièces détachées</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href= "style_header.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <header>
+        <div class="logo">
+            <img src="bin/TechMeca.png" alt="TechMeca Logo">
+        </div>
+        <h1>Stock de pièces détachées</h1>
+    </header>
+
+</head>
+<body>
+
+     <div id="header"></div>
+
+    <main>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Pièce</th>
+                        <th>Nom Pièce</th>
+                        <th>Référence</th>
+                        <th>Quantité</th>
+                        <th>Seuil Critique</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>P1</td><td>Courroie de transmission</td><td>CT-1001</td><td></td><td></td></tr>
+                    <tr><td>P2</td><td>Roulement à billes</td><td>RB-5003</td><td></td><td></td></tr>
+                    <tr><td>P3</td><td>Système de lubrification</td><td>SL-3020</td><td></td><td></td></tr>
+                    <tr><td>P4</td><td>Capteur de position</td><td>CP-2002</td><td></td><td></td></tr>
+                    <tr><td>P5</td><td>Servomoteur X</td><td>SX-4005</td><td></td><td></td></tr>
+                    <tr><td>P6</td><td>Servomoteur Y</td><td>SY-4006</td><td></td><td></td></tr>
+                    <tr><td>P7</td><td>Servomoteur Z</td><td>SZ-4007</td><td></td><td></td></tr>
+                    <tr><td>P8</td><td>Pompe hydraulique</td><td>PH-6008</td><td></td><td></td></tr>
+                    <tr><td>P9</td><td>Mandrin</td><td>MD-7001</td><td></td><td></td></tr>
+                    <tr><td>P10</td><td>Panneau de contrôle</td><td>PC-8003</td><td></td><td></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <div class="notification-icon">🔔</div>
+    <script>   
+        $(document).ready(function() {
+            $('#header').load('header.html');
+        });
+        </script>
+
+</body>
+</html>

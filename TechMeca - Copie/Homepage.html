@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <title>Chaîne de production</title>
+        <link rel="stylesheet" href= "style_header.css">
+        <link rel="stylesheet" href= "style.css">
+
+        
+        <header>
+            <div class="homelogo">
+                <img src="bin/TechMeca.png" alt="TechMeca Logo">
+            </div>
+            
+        </header>
+    </head>
+    <div id="header"></div>
+    
+    <body>
+    <p> Bienvenue, 
+        chez TechMeca</p>
+    <main>
+       
+    </main>
+
+   
+    <script>
+        function toggleNotifications() {
+            document.getElementById('notification-bar').classList.toggle('hidden');
+        }
+        $(document).ready(function() {
+        // Charger le menu depuis le fichier menu.html
+        $("#header").load("header.html");
+    });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Machine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href= "style_header.css">
+
+
+    <header>
+        <div class="logo">
+            <img src="bin/TechMeca.png" alt="TechMeca Logo">
+        </div>
+        <h1>Machine</h1>
+    </header>
+
+
+</head>
+<body>
+    <div id="header"></div>
+    <main>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Machine</th>
+                        <th>Nom Machine</th>
+                        <th>ID Chaîne</th>
+                        <th>État</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>M1</td><td>Tour CNC 1</td><td>C1</td><td></td></tr>
+                    <tr><td>M2</td><td>Tour CNC 1</td><td>C1</td><td></td></tr>
+                    <tr><td>M3</td><td>Fraiseuse 1</td><td>C1</td><td></td></tr>
+                    <tr><td>M4</td><td>Fraiseuse 2</td><td>C1</td><td></td></tr>
+                    <tr><td>M5</td><td>Rectifieuse</td><td>C1</td><td></td></tr>
+                    <tr><td>M6</td><td>Robot 1</td><td>C2</td><td></td></tr>
+                    <tr><td>M7</td><td>Robot 2</td><td>C2</td><td></td></tr>
+                    <tr><td>M8</td><td>Presse 1</td><td>C2</td><td></td></tr>
+                    <tr><td>M9</td><td>Presse 2</td><td>C2</td><td></td></tr>
+                    <tr><td>M10</td><td>Soudure auto 1</td><td>C2</td><td></td></tr>
+                    <tr><td>M11</td><td>Peinture 1</td><td>C3</td><td></td></tr>
+                    <tr><td>M12</td><td>Peinture 2</td><td>C3</td><td></td></tr>
+                    <tr><td>M13</td><td>Séchage 1</td><td>C3</td><td></td></tr>
+                    <tr><td>M14</td><td>Séchage 2</td><td>C3</td><td></td></tr>
+                    <tr><td>M15</td><td>Contrôle Qualité</td><td>C3</td><td></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <!-- Icône de notification -->
+<div class="notification-icon" onclick="toggleNotifications()">🔔</div>
+
+<!-- Panneau des notifications -->
+<div id="notification-bar" class="hidden">
+    <h2>Notifications</h2>
+    <ul id="notification-list">
+        <li>Aucune notification pour le moment.</li>
+    </ul>
+    <button onclick="toggleNotifications()">Fermer</button>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("table tbody tr").forEach((row) => {
+            const actionsCell = document.createElement("td");
+            actionsCell.className = "actions";
+            actionsCell.innerHTML = `
+                <span class="edit">✏️</span>
+                <span class="delete">🗑️</span>
+            `;
+            row.appendChild(actionsCell);
+            
+            actionsCell.querySelector(".delete").addEventListener("click", function () {
+            const confirmation = confirm("Êtes-vous sûr de vouloir supprimer cette machine ?");
+            if (confirmation) {
+                row.remove();
+            }
+        });
+    });
+});
+</script>
+    
+
+    <script>
+        function toggleNotifications() {
+            document.getElementById('notification-bar').classList.toggle('hidden');
+        }
+        $(document).ready(function() {
+        // Charger le menu depuis le fichier menu.html
+        $("#header").load("header.html");
+    });
+    </script>
+    <a href="Formulaire.html" class="btn add-machine-btn">Ajouter une machine</a>
+
+</body>
+</html>
