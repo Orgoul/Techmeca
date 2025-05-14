@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<head>
+    <title>Équipement</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href= "style_header.css">
+
+          <!--titre et logo-->
+    <header>
+        <a href="Homepage.html">
+            <div class="logo"><img src="bin/TechMeca.png" alt="TechMeca Logo">
+        </div></a>
+        <h1>Équipement</h1>
+    </header>
+
+</head>
+
+ 
+
+<body>
+
+<!--menu bar et icone notification-->
+<div id="header"></div>
+
+     <!--Tableau-->
+    <main>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Équipement</th>
+                        <th>Nom Équipement</th>
+                        <th>État</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>E1</td><td>Broche principale</td><td></td></tr>
+                    <tr><td>E2</td><td>Mandrin</td><td></td></tr>
+                    <tr><td>E3</td><td>Système de lubrification</td><td></td></tr>
+                    <tr><td>E4</td><td>Servomoteur X</td><td></td></tr>
+                    <tr><td>E5</td><td>Servomoteur Y</td><td></td></tr>
+                    <tr><td>E6</td><td>Servomoteur Z</td><td></td></tr>
+                    <tr><td>E7</td><td>Système de refroidissement</td><td></td></tr>
+                    <tr><td>E8</td><td>Capteur de position</td><td></td></tr>
+                    <tr><td>E9</td><td>Panneau de contrôle</td><td></td></tr>
+                    <tr><td>E10</td><td>Pompe hydraulique</td><td></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    
+     <!--Charger le html header-->
+    <script>
+        $(document).ready(function() {
+        // Charger le menu depuis le fichier menu.html
+        $("#header").load("header.html");
+    });
+    </script>
+    
+</body>
+</html>

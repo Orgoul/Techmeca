@@ -1,0 +1,38 @@
+<!--menu bar-->
+<nav>
+    <ul>
+        <li><a href="Chaîne de production.html">Chaîne de production</a></li>
+        <li><a href="Machine.html">Machine</a></li>
+        <li><a href="Equipements.html">Équipements</a></li>
+        <li><a href="Stock de pièce détaché.html">Stock de pièces détachées</a></li>
+    </ul>
+</nav>
+
+
+
+<!-- Icône pour ouvrir les notifications -->
+<div class="notification-icon" id="notification-icon" onclick="toggleNotifications()">🔔</div>
+
+<!-- Barre de notifications -->
+<div id="notification-bar">
+  <h2>Notification</h2>
+  <div class="notif-content">
+    <p>Aucune notification pour l’instant.</p>
+  </div>
+  <button class="close-btn" onclick="toggleNotifications()">❌</button>
+</div>
+
+<script>
+  function toggleNotifications() {
+    const bar = document.getElementById("notification-bar");
+    const icon = document.getElementById("notification-icon");
+
+    bar.classList.toggle("visible");
+
+    if (bar.classList.contains("visible")) {
+      icon.style.display = "none";
+    } else {
+      icon.style.display = "block";
+    }
+  }
+</script>

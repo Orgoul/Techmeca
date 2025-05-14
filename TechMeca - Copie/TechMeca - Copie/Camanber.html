@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Synthétique des Machines</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background-color: #f8f9fa;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .kpi-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .kpi {
+            padding: 20px 30px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            min-width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .kpi-fonctionnement { background: #28a745; }
+        .kpi-maintenance { background: #ffc107; color: #333; }
+        .kpi-panne { background: #dc3545; }
+
+        .chart-container {
+            width: 400px;
+            margin: auto;
+        }
+
+        canvas {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>État des Machines</h1>
+
+    <!-- KPI Cards -->
+    <div class="kpi-container">
+        <div class="kpi kpi-fonctionnement">🟢 Fonctionnement : <strong id="val-fonctionnement">8</strong></div>
+        <div class="kpi kpi-maintenance">🟡 Maintenance : <strong id="val-maintenance">4</strong></div>
+        <div class="kpi kpi-panne">🔴 Panne : <strong id="val-panne">3</strong></div>
+    </div>
+
+    <!-- Chart.js Pie Chart -->
+    <div class="chart-container">
+        <canvas id="etatMachinesChart"></canvas>
+    </div>
+
+    <!-- Script pour créer le camembert -->
+    <script>
+        const fonctionnement = 8;
+        const maintenance = 4;
+        const panne = 3;
+
+        const ctx = document.getElementById('etatMachinesChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Fonctionnement', 'Maintenance', 'Panne'],
+                datasets: [{
+                    label: 'État des Machines',
+                    data: [fonctionnement, maintenance, panne],
+                    backgroundColor: ['#28a745', '#ffc107', '#dc3545'],
+                    borderColor: ['#ffffff'],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let total = fonctionnement + maintenance + panne;
+                                let value = context.raw;
+                                let percent = ((value / total) * 100).toFixed(1);
+                                return `${context.label}: ${value} machines (${percent}%)`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
